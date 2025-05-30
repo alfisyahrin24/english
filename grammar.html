@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grammar - Learn Verb To Be</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Variabel Warna (Palet Warna Girly dan Aesthetic) */
+        :root {
+            --primary-pastel-pink: #fdf6f0; /* Warna body */
+            --secondary-pastel-lavender: #F2DCDC; /* Warna navbar/header dan footer */
+            --accent-pastel-rose: #FF69B4; /* Pink yang lebih cerah sebagai aksen */
+            --text-soft-grey: #696969; /* Abu-abu lembut untuk teks konten utama */
+            --light-pastel: #FFF0F5; /* Light pink/lavender blush untuk elemen lain */
+            --card-bg-white: #FFFFFF; /* Putih untuk card */
+            --border-pastel-pink: #FFB6C1; /* Pink pastel tipis untuk border */
+            --shadow-pastel: rgba(255, 182, 193, 0.3); /* Shadow lembut pink */
+            --conclusion-bg-color: #FADADD;
+            --conclusion-text-color: var(--text-soft-grey);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-pastel-pink);
+            color: var(--text-soft-grey);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: var(--secondary-pastel-lavender);
+            color: var(--text-soft-grey);
+            padding: 1rem 0;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 4px 10px var(--shadow-pastel);
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .header-top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 1.5rem;
+            box-sizing: border-box;
+        }
+        nav {
+            background-color: transparent;
+            padding: 0.5rem 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 2.5rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-soft-grey);
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease, transform 0.2s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        nav ul li a:hover, nav ul li a.active-nav {
+            color: var(--accent-pastel-rose);
+            transform: translateY(-2px);
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-pastel-rose);
+            transition: width 0.3s ease;
+        }
+        nav ul li a:hover::after, nav ul li a.active-nav::after {
+            width: 100%;
+        }
+        .main-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0 1rem;
+            flex-grow: 1;
+            box-sizing: border-box; /* Added for better padding behavior */
+        }
+        .container {
+            padding: 1.8rem;
+            max-width: 600px;
+            width: 100%;
+            background-color: var(--card-bg-white);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow-pastel);
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-pastel-pink);
+            box-sizing: border-box; /* Added for better padding behavior */
+        }
+        h2 {
+            color: var(--accent-pastel-rose);
+            font-family: 'Lora', serif;
+            font-size: 2.2rem;
+            margin-top: 2rem;
+            margin-bottom: 1.2rem;
+            text-align: center;
+            position: relative;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+        h2::after {
+            content: '🌸';
+            display: block;
+            font-size: 1.5rem;
+            color: var(--accent-pastel-rose);
+            margin-top: 0.5rem;
+        }
+        h3 {
+            color: var(--accent-pastel-rose);
+            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.7rem;
+            font-weight: 700;
+        }
+        p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            line-height: 1.65;
+            margin-bottom: 1rem;
+            color: var(--text-soft-grey);
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        ul li::before {
+            content: '🌷';
+            position: absolute;
+            left: 0;
+            color: var(--accent-pastel-rose);
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1.5rem 0;
+            background-color: var(--card-bg-white);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            border-radius: 10px;
+            overflow: hidden; /* Keeps content within rounded borders */
+            border: 1px solid var(--border-pastel-pink);
+        }
+        /* Wrapper for table to enable horizontal scroll on small screens if needed */
+        .table-responsive-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        th, td {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-pastel-pink);
+            color: var(--text-soft-grey);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            white-space: nowrap; /* Prevents text wrapping in cells that might break layout */
+        }
+        th {
+            background-color: var(--secondary-pastel-lavender);
+            color: #333333;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:nth-child(even) {
+            background-color: #F8F0E3;
+        }
+        .highlight-box {
+            background-color: var(--light-pastel);
+            border-left: 5px solid var(--accent-pastel-rose);
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px var(--shadow-pastel);
+            color: var(--text-soft-grey);
+        }
+        .highlight-box h3 {
+            color: var(--accent-pastel-rose);
+            margin-top: 0;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .highlight-box ul li {
+            font-family: 'Poppins', sans-serif;
+             font-size: 0.95rem;
+        }
+        .highlight-box p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+        .example-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .example-list li {
+            background-color: #FFE4E1;
+            margin-bottom: 0.6rem;
+            padding: 0.7rem 1rem;
+            border-radius: 8px;
+            font-style: italic;
+            border-left: 3px solid var(--border-pastel-pink);
+            color: var(--text-soft-grey);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+        }
+         .example-list li::before {
+            content: '';
+        }
+        .formula {
+            background-color: #F0FFF0;
+            border-left: 4px solid #8FBC8F;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-family: 'Poppins', monospace;
+            font-size: 1.05em;
+            color: #2E8B57;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            overflow-x: auto; /* For long formulas */
+        }
+        .note {
+            background-color: #E0FFFF;
+            border-left: 4px solid #ADD8E6;
+            padding: 0.9rem;
+            margin: 1.2rem 0;
+            font-size: 0.95em;
+            color: #4682B4;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            font-family: 'Poppins', sans-serif;
+        }
+        .note strong {
+            font-weight: 600;
+        }
+        .conclusion {
+            background-color: var(--conclusion-bg-color);
+            color: var(--conclusion-text-color);
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.15rem;
+            font-weight: 400;
+            box-shadow: 0 6px 20px var(--shadow-pastel);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Gaya Footer (Digunakan di kedua halaman) */
+        footer {
+            background-color: var(--secondary-pastel-lavender);
+            color: var(--text-soft-grey);
+            padding: 1.5rem 1rem;
+            font-size: 0.9rem;
+            width: 100%;
+            box-shadow: 0 -2px 8px var(--shadow-pastel);
+            display: flex;
+            flex-direction: column; /* Item ditumpuk vertikal */
+            justify-content: center;
+            align-items: center;   /* Centering item secara horizontal */
+            text-align: center;    /* Centering teks di dalam item */
+            gap: 0.8rem;           /* Jarak antar elemen footer */
+            margin-top: auto;
+            box-sizing: border-box;
+        }
+
+        footer p.footer-copyright-text { /* Class baru untuk copyright agar tidak bentrok dengan p lain */
+            margin-bottom: 0.2rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9em;
+            color: var(--text-soft-grey);
+        }
+
+        .footer-contact a {
+            color: var(--text-soft-grey);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9em;
+        }
+
+        .footer-contact a:hover {
+            color: var(--accent-pastel-rose);
+        }
+        .footer-contact i {
+            margin-right: 0.4rem;
+        }
+
+        .footer-language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .footer-language-switcher a {
+            color: var(--text-soft-grey);
+            text-decoration: none;
+            font-weight: 300;
+            font-size: 0.9em;
+            padding-bottom: 2px;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+        .footer-language-switcher a.active {
+            color: var(--accent-pastel-rose);
+            border-bottom: 1px solid var(--accent-pastel-rose);
+        }
+        .footer-language-switcher a:not(.active):hover {
+            color: var(--accent-pastel-rose);
+            border-bottom: 1px solid var(--accent-pastel-rose);
+        }
+        .footer-language-switcher .separator {
+            color: var(--text-soft-grey);
+            font-size: 0.9em;
+        }
+        /* Akhir Gaya Footer */
+
+
+        /* Penyesuaian Responsif untuk perangkat mobile */
+        @media (max-width: 768px) {
+            header { padding: 0.8rem 0; margin-bottom: 1.5rem;} /* Reduced padding and margin */
+            .header-top { padding: 0 1rem; } /* Reduced padding */
+            nav ul { gap: 1.5rem; }
+            nav ul li a { font-size: 1rem; }
+
+            .main-wrapper { padding: 0 0.8rem; }
+            .container { padding: 1.5rem; max-width: 95%; border-radius: 12px; }
+            
+            h2 { font-size: 1.8rem; margin-top: 1.5rem; margin-bottom: 1rem; }
+            h2::after { font-size: 1.2rem; margin-top: 0.4rem; }
+            h3 { font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.6rem; }
+            
+            th, td { padding: 0.6rem 0.7rem; font-size: 0.85rem; white-space: normal; } /* Allow text wrap in tables */
+            /* Remove table-responsive-wrapper for this breakpoint if direct table adjustments are enough */
+            /* table { display: block; overflow-x: auto; } */ /* Alternative for tables */
+
+            .highlight-box { padding: 1.2rem; margin: 2rem 0; border-radius: 8px; }
+            .highlight-box h3 { font-size: 1.6rem; }
+            .formula, .note { padding: 1rem; margin: 1.5rem 0; border-radius: 8px; }
+            .conclusion { padding: 1.5rem; margin-top: 2rem; font-size: 1.05rem; }
+            
+            .example-list li { padding: 0.6rem 0.9rem; border-radius: 6px; font-size: 0.9rem; }
+            
+            footer {
+                padding: 1.2rem 0.5rem;
+                gap: 0.7rem;
+            }
+            footer p.footer-copyright-text, .footer-contact a, .footer-language-switcher a, .footer-language-switcher .separator {
+                 font-size: 0.85em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header { padding: 0.6rem 0; margin-bottom: 1rem; }
+            .header-top { padding: 0 0.5rem; }
+            nav ul { gap: 1rem; justify-content: center; } /* Center nav items if they wrap */
+            nav ul li a { font-size: 0.95rem; }
+
+            .main-wrapper { padding: 0 0.5rem; }
+            .container { padding: 1rem; border-radius: 10px; }
+
+            h2 { font-size: 1.6rem; margin-top: 1.2rem; margin-bottom: 0.8rem;}
+            h2::after { font-size: 1.1rem; margin-top: 0.3rem; }
+            h3 { font-size: 1.2rem; margin-top: 1.2rem; margin-bottom: 0.5rem; }
+            
+            p, ul li, .highlight-box p, .highlight-box ul li { font-size: 0.9rem; }
+            ul li { padding-left: 1.3rem; } /* Adjust padding for emoji */
+            ul li::before { font-size: 0.9rem; } /* Adjust emoji size if needed */
+
+
+            th, td { padding: 0.5rem 0.5rem; font-size: 0.8rem; }
+            /* table { display: block; overflow-x: auto; } */ /* More likely needed here */
+            .table-responsive-wrapper { /* Enable horizontal scroll for tables */
+                overflow-x: auto;
+                margin: 1rem 0; /* Adjusted margin */
+            }
+            .table-responsive-wrapper table {
+                min-width: 400px; /* Example: force table to be at least this wide before scroll appears */
+            }
+            th, td { white-space: nowrap; } /* Keep nowrap if using horizontal scroll */
+
+
+            .highlight-box { padding: 1rem; margin: 1.5rem 0; }
+            .highlight-box h3 { font-size: 1.4rem; }
+
+            .example-list li { padding: 0.5rem 0.7rem; font-size: 0.85rem; }
+            
+            .formula { font-size: 0.85rem; padding: 0.8rem; }
+            .note { font-size: 0.85rem; padding: 0.8rem; }
+
+            .conclusion { padding: 1.2rem; font-size: 0.95rem; margin-top: 1.5rem; }
+            .conclusion p { font-size: 0.95rem; } /* Ensure p inside conclusion scales */
+
+            footer {
+                padding: 1rem 0.5rem;
+                gap: 0.5rem;
+            }
+            footer p.footer-copyright-text, .footer-contact a, .footer-language-switcher a, .footer-language-switcher .separator {
+                 font-size: 0.8em;
+            }
+        }
+
+        /* Ensure tables are wrapped in table-responsive-wrapper in HTML for horizontal scroll */
+        /* Example of wrapping a table in HTML:
+           <div class="table-responsive-wrapper">
+               <table>
+                   ...
+               </table>
+           </div>
+        */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link" data-nav-text-en="Home" data-nav-text-id="🌷Beranda">🌷Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <div class="container" id="content-container">
+            <div id="english-content">
+                <section>
+                    <h2>1️⃣ What is Verb "To Be"?</h2>
+                    <p>The verb "to be" is an auxiliary verb used to indicate:</p>
+                    <ul>
+                        <li>Identity (who someone/something is)</li>
+                        <li>Condition (how someone/something feels or appears)</li>
+                        <li>Location (where someone/something is)</li>
+                    </ul>
+                    <p>In the Present Tense, the forms of the verb "to be" are:</p>
+                    <ul>
+                        <li>am</li>
+                        <li>is</li>
+                        <li>are</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>2️⃣ Usage of “To Be” According to the Subject</h2>
+                    <div class="table-responsive-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Verb "To Be"</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>I</td><td>am</td><td>I am a student.</td></tr>
+                                <tr><td>You</td><td>are</td><td>You are my best friend.</td></tr>
+                                <tr><td>He</td><td>is</td><td>He is a doctor.</td></tr>
+                                <tr><td>She</td><td>is</td><td>She is my sister.</td></tr>
+                                <tr><td>It</td><td>is</td><td>It is a cat.</td></tr>
+                                <tr><td>We</td><td>are</td><td>We are classmates.</td></tr>
+                                <tr><td>They</td><td>are</td><td>They are in the library.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>3️⃣ Sentence Forms with Verb “To Be”</h2>
+
+                    <h3>➕ A. Affirmative Sentence</h3>
+                    <div class="formula">
+                        <strong>Formula:</strong> Subject + to be + noun/adjective/adverb
+                    </div>
+                    <p><strong>Examples:</strong></p>
+                    <ul class="example-list">
+                        <li> I am happy.</li>
+                        <li> She is a teacher.</li>
+                        <li> We are in the classroom.</li>
+                    </ul>
+
+                    <h3>➖ B. Negative Sentence</h3>
+                    <div class="formula">
+                        <strong>Formula:</strong> Subject + to be + not + noun/adjective/adverb
+                    </div>
+                    <p><strong>Examples:</strong></p>
+                    <ul class="example-list">
+                        <li> I am not tired.</li>
+                        <li> He is not a student.</li>
+                        <li> They are not at school.</li>
+                    </ul>
+                    <div class="note">
+                        <strong>Note:</strong><br>
+                        <strong>is not</strong> = isn’t<br>
+                        <strong>are not</strong> = aren’t
+                    </div>
+
+                    <h3>❓ C. Interrogative Sentence</h3>
+                    <div class="formula">
+                        <strong>Formula:</strong> To be + subject + noun/adjective/adverb + ?
+                    </div>
+                    <p><strong>Examples:</strong></p>
+                    <ul class="example-list">
+                        <li> Am I late?</li>
+                        <li> Is she your sister?</li>
+                        <li> Are they ready?</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>4️⃣ Usage in Context</h2>
+                     <div class="table-responsive-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Sentence</th>
+                                    <th>Meaning in Indonesian</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>I am 13 years old.</td><td>Saya berumur 13 tahun.</td></tr>
+                                <tr><td>He is a soccer player.</td><td>Dia adalah pemain sepak bola.</td></tr>
+                                <tr><td>They are not at home.</td><td>Mereka tidak di rumah.</td></tr>
+                                <tr><td>Are we late?</td><td>Apakah kita terlambat?</td></tr>
+                                <tr><td>She isn’t my cousin.</td><td>Dia bukan sepupuku.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <div class="highlight-box">
+                    <h3>💡 Key Summary</h3>
+                    <ul>
+                        <li><strong>I</strong> → am</li>
+                        <li><strong>He/She/It</strong> → is</li>
+                        <li><strong>You/We/They</strong> → are</li>
+                    </ul>
+                    <p>Use <strong>not</strong> for negative sentences, and switch the position of <strong>"to be"</strong> for questions.</p>
+                </div>
+
+                <section>
+                    <h2>5️⃣ Additional Note</h2>
+                    <p>The verb “to be” changes its form in other tenses (e.g., "was/were" for past tense, "will be" for future tense). This material focuses on the simple present tense only to provide a fundamental understanding.</p>
+                </section>
+
+                <div class="conclusion">
+                    <p>Mastering the verb "to be" is a crucial step in learning English! Keep practicing, and you'll be speaking confidently in no time.</p>
+                </div>
+            </div>
+
+            <div id="indonesian-content" style="display:none;">
+                <section>
+                    <h2>1️⃣ Apa itu Kata Kerja "To Be"?</h2>
+                    <p>Kata kerja "to be" adalah kata kerja bantu yang digunakan untuk menunjukkan:</p>
+                    <ul>
+                        <li>**Identitas** (siapa/apa seseorang/sesuatu)</li>
+                        <li>**Kondisi** (bagaimana perasaan atau penampilan seseorang/sesuatu)</li>
+                        <li>**Lokasi** (di mana seseorang/sesuatu berada)</li>
+                    </ul>
+                    <p>Dalam Bentuk Sekarang (Present Tense), bentuk-bentuk kata kerja "to be" adalah:</p>
+                    <ul>
+                        <li>**am**</li>
+                        <li>**is**</li>
+                        <li>**are**</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>2️⃣ Penggunaan “To Be” Berdasarkan Subjek</h2>
+                    <div class="table-responsive-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Subjek</th>
+                                    <th>Kata Kerja "To Be"</th>
+                                    <th>Contoh</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>I</td><td>am</td><td>Saya adalah seorang siswa.</td></tr>
+                                <tr><td>You</td><td>are</td><td>Kamu adalah sahabatku.</td></tr>
+                                <tr><td>He</td><td>is</td><td>Dia (laki-laki) adalah seorang dokter.</td></tr>
+                                <tr><td>She</td><td>is</td><td>Dia (perempuan) adalah adikku.</td></tr>
+                                <tr><td>It</td><td>is</td><td>Itu adalah seekor kucing.</td></tr>
+                                <tr><td>We</td><td>are</td><td>Kami adalah teman sekelas.</td></tr>
+                                <tr><td>They</td><td>are</td><td>Mereka berada di perpustakaan.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>3️⃣ Bentuk Kalimat dengan Kata Kerja “To Be”</h2>
+
+                    <h3>➕ A. Kalimat Afirmatif (Positif)</h3>
+                    <div class="formula">
+                        <strong>Rumus:</strong> Subjek + to be + kata benda/kata sifat/kata keterangan
+                    </div>
+                    <p><strong>Contoh:</strong></p>
+                    <ul class="example-list">
+                        <li>Saya bahagia.</li>
+                        <li>Dia (perempuan) adalah seorang guru.</li>
+                        <li>Kami berada di kelas.</li>
+                    </ul>
+
+                    <h3>➖ B. Kalimat Negatif</h3>
+                    <div class="formula">
+                        <strong>Rumus:</strong> Subjek + to be + not + kata benda/kata sifat/kata keterangan
+                    </div>
+                    <p><strong>Contoh:</strong></p>
+                    <ul class="example-list">
+                        <li>Saya tidak lelah.</li>
+                        <li>Dia (laki-laki) bukan seorang siswa.</li>
+                        <li>Mereka tidak di sekolah.</li>
+                    </ul>
+                    <div class="note">
+                        <strong>Catatan:</strong><br>
+                        <strong>is not</strong> = isn’t<br>
+                        <strong>are not</strong> = aren’t
+                    </div>
+
+                    <h3>❓ C. Kalimat Interogatif (Tanya)</h3>
+                    <div class="formula">
+                        <strong>Rumus:</strong> To be + subjek + kata benda/kata sifat/kata keterangan + ?
+                    </div>
+                    <p><strong>Contoh:</strong></p>
+                    <ul class="example-list">
+                        <li>Apakah saya terlambat?</li>
+                        <li>Apakah dia (perempuan) adikmu?</li>
+                        <li>Apakah mereka siap?</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>4️⃣ Penggunaan dalam Konteks</h2>
+                    <div class="table-responsive-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Kalimat (Inggris)</th>
+                                    <th>Arti dalam Bahasa Indonesia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>I am 13 years old.</td><td>Saya berumur 13 tahun.</td></tr>
+                                <tr><td>He is a soccer player.</td><td>Dia adalah pemain sepak bola.</td></tr>
+                                <tr><td>They are not at home.</td><td>Mereka tidak di rumah.</td></tr>
+                                <tr><td>Are we late?</td><td>Apakah kita terlambat?</td></tr>
+                                <tr><td>She isn’t my cousin.</td><td>Dia bukan sepupuku.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <div class="highlight-box">
+                    <h3>💡 Ringkasan Utama</h3>
+                    <ul>
+                        <li><strong>I</strong> → am</li>
+                        <li><strong>He/She/It</strong> → is</li>
+                        <li><strong>You/We/They</strong> → are</li>
+                    </ul>
+                    <p>Gunakan <strong>not</strong> untuk kalimat negatif, dan tukar posisi <strong>"to be"</strong> untuk pertanyaan.</p>
+                </div>
+
+                <section>
+                    <h2>5️⃣ Catatan Tambahan</h2>
+                    <p>Kata kerja “to be” mengubah bentuknya dalam tenses lain (misalnya, "was/were" untuk bentuk lampau, "will be" untuk bentuk masa depan). Materi ini hanya berfokus pada simple present tense untuk memberikan pemahaman dasar.</p>
+                </section>
+
+                <div class="conclusion">
+                    <p>Menguasai kata kerja "to be" adalah langkah krusial dalam belajar bahasa Inggris! Teruslah berlatih, dan Anda akan segera berbicara dengan percaya diri.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+      <p class="footer-copyright-text">© 2025 To Be. Thanks.</p>
+      <div class="footer-contact">
+        <a href="mailto:alfisyahrinquzaima24@gmail.com" title="Send email">
+          <i class="fas fa-envelope"></i> Send Email
+        </a>
+      </div>
+      <div class="footer-language-switcher">
+            <a href="#" id="lang-en" class="active">EN</a>
+            <span class="separator">|</span>
+            <a href="#" id="lang-id">ID</a>
+      </div>
+    </footer>
+
+    <script>
+        const langEnBtn = document.getElementById('lang-en');
+        const langIdBtn = document.getElementById('lang-id');
+        const englishContent = document.getElementById('english-content');
+        const indonesianContent = document.getElementById('indonesian-content');
+        const pageTitle = document.querySelector('title');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function setLanguage(lang) {
+            if (englishContent && indonesianContent) {
+                if (lang === 'en') {
+                    englishContent.style.display = 'block';
+                    indonesianContent.style.display = 'none';
+                    if (langEnBtn) langEnBtn.classList.add('active');
+                    if (langIdBtn) langIdBtn.classList.remove('active');
+                    pageTitle.textContent = 'Grammar - Learn Verb To Be';
+                    navLinks.forEach(link => {
+                        if (link.dataset.navTextEn) {
+                             link.textContent = link.dataset.navTextEn;
+                        }
+                    });
+
+                } else if (lang === 'id') {
+                    englishContent.style.display = 'none';
+                    indonesianContent.style.display = 'block';
+                    if (langEnBtn) langEnBtn.classList.remove('active');
+                    if (langIdBtn) langIdBtn.classList.add('active');
+                    pageTitle.textContent = 'Tata Bahasa - Belajar Verb To Be';
+                    navLinks.forEach(link => {
+                         if (link.dataset.navTextId) {
+                            link.textContent = link.dataset.navTextId;
+                         }
+                    });
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const homeLink = document.querySelector('a[href="index.html"]');
+            if (homeLink) {
+                // Check if current page is index.html or root path
+                const currentPath = window.location.pathname;
+                const isHomePage = currentPath.endsWith('index.html') || currentPath.endsWith('/') || currentPath === '';
+                
+                // Logic for active-nav based on page. This example is for a single page, so it might be simplified.
+                // If you have multiple pages, this logic would need to be more sophisticated.
+                // For this specific "verb-to-be.html" page, the "Home" link is not active.
+                // The active-nav logic is better suited for the actual index.html page.
+                // However, if you intend this to be the "active" grammar page:
+                // if (currentPath.includes('verb-to-be.html')) {
+                //     // Potentially add an active class to a "Grammar" link if you had one.
+                // }
+                 if (isHomePage) { // This logic applies if this file *were* index.html
+                     homeLink.classList.add('active-nav');
+                 } else {
+                     homeLink.classList.remove('active-nav'); // Ensure it's not active on other pages
+                 }
+            }
+
+            if (langEnBtn && langIdBtn) {
+                 setLanguage('en');
+                langEnBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage('en');
+                });
+                langIdBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage('id');
+                });
+            } else {
+                 if (document.getElementById('english-content') && document.getElementById('indonesian-content')) {
+                    setLanguage('en');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
